@@ -37,7 +37,7 @@
 // en la documentacion de la pagina podremos ver como podemos cambiar, posicion en la pagina, iconos,
 //mensajes, el tiempo de espera, lo que aprece y desapárece, colocarle una imagen tambien.
 
-let boton = document.getElementById("boton");
+// let boton = document.getElementById("boton");
 // boton.addEventListener("click", () => {
 //     Swal.fire({
 //         icon: "error",
@@ -87,50 +87,113 @@ let boton = document.getElementById("boton");
 
 
 
-boton.addEventListener("click", () => {
-    Swal.fire({
-        title: 'sweet!',
-        text: 'Modal with a custon image',
-        imageUrl: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fes-es%2Fbuscar%2Farboles%2F&psig=AOvVaw2tqsuNJz7Ye4nEYENWLurf&ust=1721781828405000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLDhrqn3u4cDFQAAAAAdAAAAABAE",
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: "A tall image"
-      });
+// boton.addEventListener("click", () => {
+//     Swal.fire({
+//         title: "Sweet!",
+//         text: "Modal with a custom image.",
+//         imageUrl: "https://unsplash.it/400/200",
+//         imageWidth: 400,
+//         imageHeight: 200,
+//         imageAlt: "Custom image"
+//       });
 
-    });
+//     });
 
+// tenemos alertas mas avanzadas, donde tenemos una ventana donde nos hace una pregunta,
+// y tenemos dos opciones, si es true saldra el mensaje y se ejecutara y sino, no se ejecutara nada.
+
+// si quisieramos eliminar y que esto lo saue del localStorage, lam logica la podemos poner dentro del if.
 
 
 // boton.addEventListener("click", () => {
 //     Swal.fire({
-//         title: "Do you want to save the changes?",
+//         title: "Esta seguro de eliminar el producto?",
+//         icon: "warning",
 //         showDenyButton: true,
-//         showCancelButton: true,
-//         confirmButtonText: "Save",
-//         denyButtonText: `Don't save`
+//         confirmButtonText: "Si, seguro",
+//         cancelButtonText: `No, no quiero`,
 //       }).then((result) => {
-//         /* Read more about isConfirmed, isDenied below */
 //         if (result.isConfirmed) {
-//           Swal.fire("Saved!", "", "success");
-//         } else if (result.isDenied) {
-//           Swal.fire("Changes are not saved", "", "info");
+//             //logica para eliminar
+//           Swal.fire({
+//             title: "Borrado",
+//             icon:"success",
+//             text: "El archivo a sido borrado",
+//           }) 
 //         }
 //       });
 // });
 
 
+// });
 
 
+// este ejemplo de abajo es para poner como ingreso el git hub de cada usuario
+
+// boton.addEventListener("click", () => {
+//     Swal.fire({
+//         title: "Submit your Github username",
+//         input: "text",
+//         inputAttributes: {
+//           autocapitalize: "off"
+//         },
+//         showCancelButton: true,
+//         confirmButtonText: "Look up",
+//         showLoaderOnConfirm: true,
+//         preConfirm: async (login) => {
+//           try {
+//             const githubUrl = `
+//               https://api.github.com/users/${login}
+//             `;
+//             const response = await fetch(githubUrl);
+//             if (!response.ok) {
+//               return Swal.showValidationMessage(`
+//                 ${JSON.stringify(await response.json())}
+//               `);
+//             }
+//             return response.json();
+//           } catch (error) {
+//             Swal.showValidationMessage(`
+//               Request failed: ${error}
+//             `);
+//           }
+//         },
+//         allowOutsideClick: () => !Swal.isLoading()
+//       }).then((result) => {
+//         if (result.isConfirmed) {
+//           Swal.fire({
+//             title: `${result.value.login}'s avatar`,
+//             imageUrl: result.value.avatar_url
+//           });
+//         }
+//       });
+    
+    
+// });
 
 
+// este se puede usar para agregar al carrito, o se guardo, se acepto la entrada, etc. es muy rapida.
+// y si le apoyamos el mouse encima se para el tiempo en el cual se va a cerrar el cartel o alerta
 
 
-
-
-
-
-
-
+//   boton.addEventListener("click", () => {
+//     const Toast = Swal.mixin({
+//         toast: true,
+//         position: "top-end",
+//         showConfirmButton: false,
+//         timer: 3000,
+//         timerProgressBar: true,
+//         didOpen: (toast) => {
+//           toast.onmouseenter = Swal.stopTimer;
+//           toast.onmouseleave = Swal.resumeTimer;
+//         }
+//       });
+//       Toast.fire({
+//         icon: "question",
+//         title: "Signed in successfully"
+//       });
+    
+//   });
 
 
 
